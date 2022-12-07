@@ -77,7 +77,7 @@ DICOM files of chest CT scans, survival data, and event status (death) data to i
 To estimate the survival model for these patients, I apply a 3D convolutional neural network on their CT scans to output a risk score for each patient. The model is trained through
 evaluating this risk score using Harrell's concordance index in the validation set and cox-proportional hazards model for each batch in the training set. The CNN model
 architecture has been adapted from [here](https://keras.io/examples/vision/3D_image_classification/) and the architecture for prediciting survival models using neural
-networks has been adapted from [here](https://k-d-w.org/blog/2020/05/survival-analysis-for-deep-learning-tutorial-for-tensorflow-2/)
+networks has been adapted from [here](https://k-d-w.org/blog/2020/05/survival-analysis-for-deep-learning-tutorial-for-tensorflow-2/).
 
 References:
 
