@@ -31,6 +31,7 @@
   <p align="center">
     Using 3D Conv nets, nonlinear cox-proportional hazards, and concordance index
     <br />
+    <br />
     <a href="https://github.com/masadeghi/lung_cancer_ctscan_survival"><strong>Explore the docs »</strong></a>
     <br />
     <br />
@@ -48,6 +49,9 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#next-steps">Next Steps</a></li>
+      </ul>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -79,6 +83,7 @@ evaluating this risk score using Harrell's concordance index in the validation s
 architecture has been adapted from [here](https://keras.io/examples/vision/3D_image_classification/) and the architecture for prediciting survival models using neural
 networks has been adapted from [here](https://k-d-w.org/blog/2020/05/survival-analysis-for-deep-learning-tutorial-for-tensorflow-2/).
 
+
 References:
 
 Aerts, H. J. W. L., Wee, L., Rios Velazquez, E., Leijenaar, R. T. H., Parmar, C., Grossmann, P., Carvalho, S., Bussink, J., Monshouwer, R., Haibe-Kains, B., Rietveld, D., Hoebers, F., Rietbergen, M. M., Leemans, C. R., Dekker, A., Quackenbush, J., Gillies, R. J., Lambin, P. (2019). Data From NSCLC-Radiomics [Data set]. The Cancer Imaging Archive. https://doi.org/10.7937/K9/TCIA.2015.PF0M9REI 
@@ -86,6 +91,14 @@ Aerts, H. J. W. L., Wee, L., Rios Velazquez, E., Leijenaar, R. T. H., Parmar, C.
 Aerts, H. J. W. L., Velazquez, E. R., Leijenaar, R. T. H., Parmar, C., Grossmann, P., Carvalho, S., Bussink, J., Monshouwer, R., Haibe-Kains, B., Rietveld, D., Hoebers, F., Rietbergen, M. M., Leemans, C. R., Dekker, A., Quackenbush, J., Gillies, R. J., Lambin, P. (2014, June 3). Decoding tumour phenotype by noninvasive imaging using a quantitative radiomics approach. Nature Communications. Nature Publishing Group. https://doi.org/10.1038/ncomms5006
 
 Clark K, Vendt B, Smith K, Freymann J, Kirby J, Koppel P, Moore S, Phillips S, Maffitt D, Pringle M, Tarbox L, Prior F. The Cancer Imaging Archive (TCIA): Maintaining and Operating a Public Information Repository, Journal of Digital Imaging, Volume 26, Number 6, December, 2013, pp 1045-1057. https://doi.org/10.1007/s10278-013-9622-7
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Next Steps
+To improve model performance, I believe we could also use the segmentation data included in the dataset. A U-Net model could be trained to perform segmentation on the chest CT scans and output a segmentation mask. This mask could then be used as a feature of the patient's condition. For example, it could be fed into another 3D CNN to output risk scores. An ensemble model could then combine the risk scores from the two 3D CNNs (one running on the original images and the other running on the 
+segmentation mask) to give the final risk score output.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
